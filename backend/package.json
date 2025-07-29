@@ -1,0 +1,42 @@
+{
+  "name": "y-insights-backend",
+  "version": "1.0.0",
+  "description": "Backend Node.js para renovação de tokens e busca de pedidos da Shopee e Mercado Livre",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "refresh-tokens": "node shopee-auto-refresh.js",
+    "fetch-orders": "node shopee-order-fetcher.js",
+    "ml-fetch-orders": "node mercado-livre-order-fetcher.js",
+    "ml-fetch-orders-schedule": "node mercado-livre-order-fetcher.js --schedule",
+    "ml-extract-financial": "node mercado-livre-financial-data-extractor.js",
+    "ml-extract-financial-schedule": "node mercado-livre-financial-data-extractor.js --schedule",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "node-cron": "^3.0.3",
+    "crypto": "^1.0.1",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "keywords": [
+    "shopee",
+    "mercado-livre",
+    "api",
+    "tokens",
+    "orders",
+    "financial-data",
+    "supabase",
+    "backend"
+  ],
+  "author": "Y Insights",
+  "license": "MIT"
+}
