@@ -1,0 +1,41 @@
+name = "concilify-backend"
+main = "backend/server.js"
+compatibility_date = "2024-01-15"
+node_compat = true
+
+[env.production]
+name = "concilify-backend-prod"
+
+[env.staging]
+name = "concilify-backend-staging"
+
+# Variáveis de ambiente que precisam ser configuradas no Cloudflare Workers
+# Use: wrangler secret put <SECRET_NAME>
+# Exemplo: wrangler secret put SUPABASE_URL
+
+# Secrets necessários:
+# SUPABASE_URL
+# SUPABASE_ANON_KEY
+# SUPABASE_SERVICE_ROLE_KEY
+# SHOPEE_PARTNER_ID
+# SHOPEE_PARTNER_KEY
+# MERCADO_LIVRE_CLIENT_ID
+# MERCADO_LIVRE_CLIENT_SECRET
+# BLING_CLIENT_ID
+# BLING_CLIENT_SECRET
+# JWT_SECRET
+# ENCRYPTION_KEY
+
+[[kv_namespaces]]
+binding = "CACHE"
+id = "your-kv-namespace-id"
+preview_id = "your-preview-kv-namespace-id"
+
+[build]
+command = "npm run build:backend"
+
+[triggers]
+crons = [
+  "0 */3 * * *",  # Refresh tokens a cada 3 horas
+  "0 */1 * * *"   # Sincronização de pedidos a cada hora
+]

@@ -7,6 +7,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node --watch server.js",
+    "build": "echo \"Backend build completed\"",
     "refresh-tokens": "node shopee-auto-refresh.js",
     "fetch-orders": "node shopee-order-fetcher.js",
     "ml-fetch-orders": "node mercado-livre-order-fetcher.js",
