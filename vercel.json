@@ -12,7 +12,8 @@
       "src": "backend/server.js",
       "use": "@vercel/node",
       "config": {
-        "maxLambdaSize": "50mb"
+        "maxLambdaSize": "50mb",
+        "maxDuration": 30
       }
     }
   ],
@@ -29,19 +30,14 @@
   "env": {
     "NODE_ENV": "production"
   },
-  "functions": {
-    "backend/server.js": {
-      "maxDuration": 30
-    }
-  },
   "crons": [
     {
       "path": "/api/tokens/refresh",
-      "schedule": "0 */3 * * *"
+      "schedule": "0 6 * * *"
     },
     {
       "path": "/api/orders/fetch",
-      "schedule": "0 */6 * * *"
+      "schedule": "0 18 * * *"
     }
   ]
 }
