@@ -1,7 +1,7 @@
 name = "concilify-backend"
 main = "backend/server.js"
 compatibility_date = "2024-01-15"
-node_compat = true
+compatibility_flags = ["nodejs_compat"]
 
 [env.production]
 name = "concilify-backend-prod"
@@ -28,8 +28,8 @@ name = "concilify-backend-staging"
 
 [[kv_namespaces]]
 binding = "CACHE"
-id = "your-kv-namespace-id"
-preview_id = "your-preview-kv-namespace-id"
+id = "8072dab52f2e4e07bfbcc17236516e13"
+preview_id = "e9e6e39f31c84a9eb428f3079c38afe6"
 
 [build]
 command = "npm run build:backend"
