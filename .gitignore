@@ -22,17 +22,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
-# Environment files
-.env
-.env.local
-.env.workers
-.env.*.local
-
-# Cloudflare Workers
-.wrangler/
-worker/
-
-# Backend environment
-backend/.env
-backend/.env.local

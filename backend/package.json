@@ -7,7 +7,6 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node --watch server.js",
-    "build": "echo \"Backend build completed\"",
     "refresh-tokens": "node shopee-auto-refresh.js",
     "fetch-orders": "node shopee-order-fetcher.js",
     "ml-fetch-orders": "node mercado-livre-order-fetcher.js",
@@ -18,15 +17,16 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.39.0",
-    "express": "^4.18.2",
     "cors": "^2.8.5",
-    "dotenv": "^16.3.1",
-    "node-cron": "^3.0.3",
     "crypto": "^1.0.1",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "node-cron": "^3.0.3",
     "node-fetch": "^3.3.2"
   },
   "devDependencies": {
-    "nodemon": "^3.0.2"
+    "nodemon": "^3.0.2",
+    "wrangler": "^4.26.1"
   },
   "keywords": [
     "shopee",
